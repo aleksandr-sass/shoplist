@@ -2,8 +2,10 @@
 let listButton = document.querySelector("#listButton");
 let list = document.querySelector("#list");
 let cartButton = document.querySelector("#cartButton");
+let cart = document.querySelector("#cart");
 
 listButton.addEventListener("click", showList);
+cartButton.addEventListener("click", showCart);
 
 function showList() {
   if (!list) return;
@@ -13,26 +15,12 @@ function showList() {
   cartButton.classList.remove("hidden");
 }
   
-  function calculate()
-  {
-    var sl=document.getElementById("shop_list");
-    if (!sl) return;
-    sl.innerHTML="";
-  
-  
-    var list="";
-    for(var val of arr)
-    {
-      var order=document.getElementById(val);
-      if(order.checked==true) list+="<li>"+val+"</li>";
-    }
-  
-    sl.innerHTML="<ul>"+list+"</ul>";
-  
-    scrollIntoShopList();
-  }
-  
-  function scrollIntoShopList() {
-    let shopList = document.querySelector("#shop_list");
-    shopList.scrollIntoView();
-  }
+function showCart() {
+  if (!cart) return;
+  cart.innerHTML = Array
+    .from(list.querySelectorAll("input"))
+    .filter((el) => el.checked)
+    .map((el) => `<li>${el.id}</li>`)
+    .join('');
+  cart.scrollIntoView();
+}
