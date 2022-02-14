@@ -10,7 +10,7 @@ cartButton.addEventListener("click", showCart);
 function showList() {
   if (!list) return;
   list.innerHTML = arr
-    .map((el) => `<p><input type='checkbox' id="${el}">${el}</p>`)
+    .map((el) => `<p><label><input type='checkbox' id="${el}">${el}</label></p>`)
     .join('');  
   cartButton.classList.remove("hidden");
 }
