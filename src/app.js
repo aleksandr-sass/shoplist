@@ -8,7 +8,8 @@ listButton.addEventListener("click", showList);
 cartButton.addEventListener("click", showCart);
 
 function showList() {
-  if (!list) return;
+  if (!list || !cart) return;
+  cart.innerHTML = '';
   list.innerHTML = arr
     .map((el) => `<p><label><input type='checkbox' id="${el}">${el}</label></p>`)
     .join('');  
