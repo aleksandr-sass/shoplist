@@ -6,17 +6,23 @@
     <title>shoplist</title>
     <style>
       .hidden {
-        visibility: hidden;
+        display: none;
       }
     </style>
   </head>
   <body>
     <h1>Список покупок</h1>
     <h2>Для показа списка продуктов нажмите кнопку "Начать"</h2>
-    <p><button id="listButton">Начать</button></p>
+    <p>
+      <button id="listButton">Начать</button>
+      <button id="categoryButton">Выбрать категорию</button>
+    </p>
+    <div id="category"></div>
+    <p><button id="listFromCategoryButton" class="hidden">Показать выбранное</button></p>
     <div id="list"></div>
     <p><button id="cartButton" class="hidden">Сформировать</button></p>
     <div id="cart"></div>
+    <p><button id="upButton" class="hidden">Вернуться в начало</button></p>
     <script src="./src/productList.js"></script>
     <script src="./src/app.js"></script>
   </body>
