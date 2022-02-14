@@ -14,7 +14,7 @@
 	<h2>Для показа списка продуктов нажмите кнопку "Начать"</h2>
 	<p><button onclick="form1();">Начать</button></p>
 	<div id="shop_"></div>
-	<p><button onclick="calculate();">Сформировать</button></p>
+	<p><button onclick="calculate();" id="form" class="hidden">Сформировать</button></p>
 	<p>================</p>
 	<div id="shop_list"></div>
 <script>
@@ -210,7 +210,8 @@ function form1()
 	}
 	
 	sm.innerHTML=cart;
-	
+
+	showFormButton();	
 }			
 
 function calculate()
@@ -228,6 +229,11 @@ function calculate()
 	}
 
 	sl.innerHTML="<ul>"+list+"</ul>";
+}
+
+function showFormButton() {
+	let formButton = document.querySelector("#form");
+  formButton.classList.remove("hidden");
 }
 </script>
 </body>
