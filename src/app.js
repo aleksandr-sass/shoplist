@@ -1,4 +1,6 @@
 //Нужно отсортировать по отделам (фрукты, бакалея, мясо, рыба)
+const arr = Object.values(obj).flat();
+
 let listButton = document.querySelector("#listButton");
 let list = document.querySelector("#list");
 let cartButton = document.querySelector("#cartButton");
