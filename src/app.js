@@ -1,20 +1,17 @@
 //Нужно отсортировать по отделам (фрукты, бакалея, мясо, рыба)
-function form1()
-  {
-    var sm=document.getElementById("shop_");
-    if (!sm) return;
-    sm.innerHTML="";
-    
-    var cart="";
-    for(var val of arr)
-    {
-      cart+="<p><input type='checkbox' id='"+val+"'>"+val+"</p>";
-    }
-    
-    sm.innerHTML=cart;
-  
-    showFormButton();	
-  }			
+let listButton = document.querySelector("#listButton");
+let list = document.querySelector("#list");
+let formButton = document.querySelector("#formButton");
+
+listButton.addEventListener("click", showList);
+
+function showList() {
+  if (!list) return;
+  list.innerHTML = arr
+    .map((el) => `<p><input type='checkbox' id="${el}">${el}</p>`)
+    .join('');  
+  formButton.classList.remove("hidden");
+}
   
   function calculate()
   {
@@ -33,11 +30,6 @@ function form1()
     sl.innerHTML="<ul>"+list+"</ul>";
   
     scrollIntoShopList();
-  }
-  
-  function showFormButton() {
-    let formButton = document.querySelector("#form");
-    formButton.classList.remove("hidden");
   }
   
   function scrollIntoShopList() {
