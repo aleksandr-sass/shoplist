@@ -228,11 +228,18 @@ function calculate()
 	}
 
 	sl.innerHTML="<ul>"+list+"</ul>";
+
+	scrollIntoShopList();
 }
 
 function showFormButton() {
 	let formButton = document.querySelector("#form");
   formButton.classList.remove("hidden");
+}
+
+function scrollIntoShopList() {
+	let shopList = document.querySelector("#shop_list");
+	shopList.scrollIntoView();
 }
 </script>
 </body>
