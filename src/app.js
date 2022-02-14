@@ -1,7 +1,7 @@
 //Нужно отсортировать по отделам (фрукты, бакалея, мясо, рыба)
 let listButton = document.querySelector("#listButton");
 let list = document.querySelector("#list");
-let formButton = document.querySelector("#formButton");
+let cartButton = document.querySelector("#cartButton");
 
 listButton.addEventListener("click", showList);
 
@@ -10,7 +10,7 @@ function showList() {
   list.innerHTML = arr
     .map((el) => `<p><input type='checkbox' id="${el}">${el}</p>`)
     .join('');  
-  formButton.classList.remove("hidden");
+  cartButton.classList.remove("hidden");
 }
   
   function calculate()
